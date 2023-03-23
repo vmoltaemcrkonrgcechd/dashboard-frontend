@@ -17,17 +17,17 @@ const doughnutData = computed(() => {
       {
         data: props.data,
         backgroundColor: getColors.value,
+        borderRadius: 5,
       },
     ],
   };
 });
+
+const doughnutOptions = {
+  aspectRatio: 2,
+};
 </script>
 
 <template>
-  <Doughnut
-    :data="doughnutData"
-    :options="{
-      responsive: false,
-    }"
-  />
+  <Doughnut :data="doughnutData" :options="doughnutOptions" />
 </template>

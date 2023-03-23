@@ -31,13 +31,12 @@ const radarData = computed(() => {
 
   return data;
 });
+
+const radarOptions = {
+  aspectRatio: 2,
+};
 </script>
 
 <template>
-  <Radar
-    :data="radarData"
-    :options="{
-      responsive: false,
-    }"
-  />
+  <Radar :data="radarData" :options="radarOptions" />
 </template>
