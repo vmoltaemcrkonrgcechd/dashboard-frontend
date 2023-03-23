@@ -22,7 +22,15 @@ import RadarChart from "@/components/RadarChart.vue";
       />
     </div>
     <div class="card">
-      <BarChart :data="[10, 40, 20, 15, 5]" />
+      <BarChart
+        :data="[
+          [10, 40, 20, 15, 5],
+          [40, 90, 15, 30, 65],
+          [25, 15, 95, 110, 70],
+          [85, 70, 75, 105, 45],
+          [55, 5, 15, 125, 20],
+        ]"
+      />
     </div>
     <div class="card">
       <DoughnutChart :data="[10, 40, 20, 15, 5]" />

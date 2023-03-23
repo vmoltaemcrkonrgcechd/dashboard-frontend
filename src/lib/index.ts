@@ -1,7 +1,7 @@
 import { computed } from "vue";
 
 export const getColors = computed((): string[] => {
-  return ["#8b1e3f", "#3c153b", "#89bd9e", "#f0c987", "#db4c40"];
+  return ["#70c3e0", "#629fd4", "#547bc9", "#4857be", "#453cb3"];
 });
 
 export const getRGBAColors = computed((): string[] => {

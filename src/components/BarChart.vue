@@ -1,26 +1,33 @@
 <script lang="ts" setup>
 import { Bar } from "vue-chartjs";
 import { computed, PropType } from "vue";
-import { getColor, getDays } from "@/lib";
+import { getColor, getColors, getDays, getRGBAColor } from "@/lib";
 
 const props = defineProps({
   data: {
-    type: Array as PropType<number[]>,
+    type: Array as PropType<number[][]>,
     required: true,
   },
 });
 
 const barData = computed(() => {
-  return {
+  const data: {
+    labels: string[];
+    datasets: { [key: string]: any }[];
+  } = {
     labels: getDays.value,
-    datasets: [
-      {
-        data: props.data,
-        backgroundColor: getColor(0),
-        borderRadius: 5,
-      },
-    ],
+    datasets: [],
   };
+
+  props.data.forEach((el: number[], ind: number) => {
+    data.datasets.push({
+      data: el,
+      backgroundColor: getColor(ind),
+      borderRadius: 5,
+    });
+  });
+
+  return data;
 });
 </script>
 
