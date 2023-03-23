@@ -1,24 +1,15 @@
 import { computed } from "vue";
 
+export const getColors = computed((): string[] => {
+  return ["#f17173", "#e23f6a", "#c63e81", "#823e88", "#aa66a5"];
+});
+
+export const getDays = computed((): string[] => {
+  return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+});
+
 export const getColor = (ind: number): string => {
-  const colors: string[] = ["#2e9993", "#1b6f85", "#0c4272"];
+  const colors: string[] = getColors.value;
 
   return colors[ind];
 };
-
-export const getMonths = computed((): string[] => {
-  return [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-});

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Line } from "vue-chartjs";
 import { PropType, computed } from "vue";
-import { getColor, getMonths } from "@/lib";
+import { getColor, getDays } from "@/lib";
 
 const props = defineProps({
   data: {
@@ -15,7 +15,7 @@ const lineData = computed(() => {
     labels: string[];
     datasets: { [key: string]: any }[];
   } = {
-    labels: getMonths.value,
+    labels: getDays.value,
     datasets: [],
   };
 

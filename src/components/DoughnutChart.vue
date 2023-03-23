@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Bar } from "vue-chartjs";
+import { Doughnut } from "vue-chartjs";
 import { computed, PropType } from "vue";
 import { getColors, getDays } from "@/lib";
 
@@ -10,7 +10,7 @@ const props = defineProps({
   },
 });
 
-const barData = computed(() => {
+const doughnutData = computed(() => {
   return {
     labels: getDays.value,
     datasets: [
@@ -24,5 +24,10 @@ const barData = computed(() => {
 </script>
 
 <template>
-  <Bar :data="barData" />
+  <Doughnut
+    :data="doughnutData"
+    :options="{
+      responsive: false,
+    }"
+  />
 </template>

@@ -8,6 +8,7 @@ import {
   LineElement,
   Tooltip,
   BarElement,
+  ArcElement,
 } from "chart.js";
 
 ChartJS.register(
@@ -16,7 +17,8 @@ ChartJS.register(
   PointElement,
   Tooltip,
   LineElement,
-  BarElement
+  BarElement,
+  ArcElement
 );
 
 createApp(App).mount("#app");
