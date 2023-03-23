@@ -3,6 +3,7 @@ import "./index.css";
 import LineChart from "@/components/LineChart.vue";
 import BarChart from "@/components/BarChart.vue";
 import DoughnutChart from "@/components/DoughnutChart.vue";
+import RadarChart from "@/components/RadarChart.vue";
 </script>
 
 <template>
@@ -17,6 +18,13 @@ import DoughnutChart from "@/components/DoughnutChart.vue";
       class="rounded-md shadow-md p-3 bg-white flex items-center justify-center"
     >
       <DoughnutChart :data="[10, 40, 20, 15, 5]" />
+    </div>
+    <div
+      class="rounded-md shadow-md p-3 bg-white flex items-center justify-center"
+    >
+      <RadarChart
+        :data="[[10, 40, 20, 15, 5], [10, 40, 20, 15, 5].reverse()]"
+      />
     </div>
   </div>
 </template>

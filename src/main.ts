@@ -9,6 +9,8 @@ import {
   Tooltip,
   BarElement,
   ArcElement,
+  RadialLinearScale,
+  Filler,
 } from "chart.js";
 
 ChartJS.register(
@@ -18,7 +20,9 @@ ChartJS.register(
   Tooltip,
   LineElement,
   BarElement,
-  ArcElement
+  ArcElement,
+  RadialLinearScale,
+  Filler
 );
 
 createApp(App).mount("#app");

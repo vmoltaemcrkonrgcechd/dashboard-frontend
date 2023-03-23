@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { Line } from "vue-chartjs";
-import { PropType, computed } from "vue";
-import { getColor, getDays } from "@/lib";
+import { Radar } from "vue-chartjs";
+import { computed, PropType } from "vue";
+import { getDays, getColor } from "@/lib";
 
 const props = defineProps({
   data: {
@@ -10,7 +10,7 @@ const props = defineProps({
   },
 });
 
-const lineData = computed(() => {
+const radarData = computed(() => {
   const data: {
     labels: string[];
     datasets: { [key: string]: any }[];
@@ -33,5 +33,10 @@ const lineData = computed(() => {
 </script>
 
 <template>
-  <Line :data="lineData" />
+  <Radar
+    :data="radarData"
+    :options="{
+      responsive: false,
+    }"
+  />
 </template>
