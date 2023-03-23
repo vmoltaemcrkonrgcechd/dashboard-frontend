@@ -1,0 +1,48 @@
+<script lang="ts" setup>
+import { Line } from "vue-chartjs";
+import { PropType, computed } from "vue";
+import { getColor } from "@/lib";
+
+const props = defineProps({
+  data: {
+    type: Array as PropType<number[][]>,
+    required: true,
+  },
+});
+
+const lineData = computed(() => {
+  const data: {
+    labels: string[];
+    datasets: { [key: string]: any }[];
+  } = {
+    labels: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    datasets: [],
+  };
+
+  props.data.forEach((el: number[], ind: number) => {
+    data.datasets.push({
+      data: el,
+      borderColor: getColor(ind),
+    });
+  });
+
+  return data;
+});
+</script>
+
+<template>
+  <Line :data="lineData" />
+</template>
