@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Radar } from "vue-chartjs";
 import { computed, PropType } from "vue";
-import { getDays, getColor } from "@/lib";
+import { getDays, getColor, getRGBAColor } from "@/lib";
 
 const props = defineProps({
   data: {
@@ -22,9 +22,10 @@ const radarData = computed(() => {
   props.data.forEach((el: number[], ind: number) => {
     data.datasets.push({
       data: el,
-      backgroundColor: getColor(ind),
-      pointBackgroundColor: getColor(ind),
+      backgroundColor: getRGBAColor(ind),
+      borderColor: getColor(ind),
       fill: true,
+      tension: 0.5,
     });
   });
 

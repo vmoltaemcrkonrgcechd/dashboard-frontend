@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Line } from "vue-chartjs";
 import { PropType, computed } from "vue";
-import { getColor, getDays } from "@/lib";
+import { getColor, getDays, getRGBAColor } from "@/lib";
 
 const props = defineProps({
   data: {
@@ -22,9 +22,10 @@ const lineData = computed(() => {
   props.data.forEach((el: number[], ind: number) => {
     data.datasets.push({
       data: el,
-      backgroundColor: getColor(ind),
-      pointBackgroundColor: getColor(ind),
+      backgroundColor: getRGBAColor(ind),
+      borderColor: getColor(ind),
       fill: true,
+      tension: 0.5,
     });
   });
 

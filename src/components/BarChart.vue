@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Bar } from "vue-chartjs";
 import { computed, PropType } from "vue";
-import { getColors, getDays } from "@/lib";
+import { getColor, getDays } from "@/lib";
 
 const props = defineProps({
   data: {
@@ -16,7 +16,8 @@ const barData = computed(() => {
     datasets: [
       {
         data: props.data,
-        backgroundColor: getColors.value,
+        backgroundColor: getColor(0),
+        borderRadius: 5,
       },
     ],
   };

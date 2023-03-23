@@ -9,7 +9,12 @@ import RadarChart from "@/components/RadarChart.vue";
 <template>
   <div class="h-screen grid grid-cols-2 grid-rows-2 p-4 gap-4 bg-gray-100">
     <div class="rounded-md shadow-md p-3 bg-white">
-      <LineChart :data="[[10, 40, 20, 15, 5], [10, 40, 20, 15, 5].reverse()]" />
+      <LineChart
+        :data="[
+          [10, 40, 20, 15, 5],
+          [40, 90, 15, 30, 65],
+        ]"
+      />
     </div>
     <div class="rounded-md shadow-md p-3 bg-white">
       <BarChart :data="[10, 40, 20, 15, 5]" />
@@ -23,7 +28,10 @@ import RadarChart from "@/components/RadarChart.vue";
       class="rounded-md shadow-md p-3 bg-white flex items-center justify-center"
     >
       <RadarChart
-        :data="[[10, 40, 20, 15, 5], [10, 40, 20, 15, 5].reverse()]"
+        :data="[
+          [10, 40, 20, 15, 5],
+          [40, 90, 15, 30, 65],
+        ]"
       />
     </div>
   </div>
